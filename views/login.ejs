@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="auto">
+  <head><script src="../js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Login - Denuncias</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  
+    
+    <!-- Custom styles for this template -->
+    <link href="../css/sign-in.css" rel="stylesheet">
+  </head>
+  <body class="d-flex align-items-center py-4 bg-body-tertiary">
+
+<main class="form-signin w-100 m-auto  shadow-lg ">
+  <form action="/login" method="POST">
+    <div style="text-align: center;">
+      <img class="mb-4" src="fogo.gif" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Por favor, faça o login,</h1>
+      <span>Para cadastrar sua denuncia.</span>
+   </div>
+    <div class="form-floating">
+      <input type="email" class="form-control" id="email" name="email" >
+      <label for="floatingInput">E-mail</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="password" name="password">
+      <label for="floatingPassword">Senha</label>
+    </div>
+
+    <button class="btn btn-primary w-100 py-2" type="submit">Entrar</button>
+  </form>
+  <br>
+  <a href="/register" class="btn w-100 py-2" style="background-color: brown;color: white;"  type="submit">Criar Conta</a>
+</main>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<% if (alert) { %>
+  <script>
+      Swal.fire({
+        title:'<%= alertTitle %>',
+        text :'<%= alertMessage %>',
+        icon : '<%= alertIcon %>',
+        showConfirmButton : '<%= showConfirmButton %>',
+        timer: '<%= timer %>'
+      }).then(()=>{
+        window.location = '/<%= ruta %>'
+      })
+  </script>
+<% } %>
+
+    </body>
+</html>

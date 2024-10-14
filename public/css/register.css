@@ -1,0 +1,34 @@
+body{
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: white;
+}
+
+.mb-3 {
+    padding: 10px;
+}
+.card{
+    background: transparent;
+    border: solid 1px brown;
+}
+
+.card-footer{
+    text-align: center;
+}
+.car-body{
+    color: brown;
+    font-weight: bold;
+}
+.card-header{
+    background: brown;
+    font-weight: bold;
+}
+.btn-brown{
+    color: white;
+    background: brown;
+}
+.btn-brown:hover{
+    background: rgba(165, 42, 42, 0.8);
+    color: white;
+}

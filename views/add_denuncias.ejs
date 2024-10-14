@@ -1,0 +1,86 @@
+<%- include("layout/hearder") %>
+<div class="container" style="text-align: right; margin-top: 10px;">
+  <a href="/denuncias" class="btn btn-danger rounded-pill px-3" style="width: 130px;box-shadow: 5px 5px 5px rgb(111, 111, 111);" type="button"><i class="bi bi-arrow-left-circle text-white"></i> Voltar</a>
+</div>
+
+<div class="container" style="background-color: white; padding: 20px;box-shadow: 10px 5px 5px rgb(111, 111, 111); margin-top: 10px; border-radius: 5px;">
+    <div class="row">
+      <% if (typeof message != "undefined") { %>
+        <div class="alert alert-<%= success %> d-flex align-items-left" style="height: 61px;" role="alert">
+          <div>
+            <%= message %>
+          </div>
+        </div>
+      <% } %>
+
+      
+        <div class="card-header" style="background-color:  brown; border-radius: 5px;margin-bottom: 10px; margin-top: 10px;">
+            <h3 class="text-light" style="padding: 10px;">Cadastrar Denuncia</h3>
+        </div>
+        <form action="/adddenuncia" method="post" id="add-form" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
+            <div class="col-md-6">
+              <label for="endereco" class="form-label">Endereço</label>
+              <input type="text" class="form-control" name="address" id="address"  required>
+              
+            </div>
+            <div class="col-md-6">
+              <label for="city" class="form-label">Cidade</label>
+              <input type="text" class="form-control" name="city" id="city"  required>
+              <div class="invalid-feedback">
+                Por favor digite a Cidade onde está acontecendo o incêndio.
+              </div>
+            </div>
+            <div class="col-md-6">
+                <label for="state" class="form-label">estado</label>
+                <input type="text" class="form-control" name="state" id="state"  required>
+                <div class="invalid-feedback">
+                  Por favor digite o estado.
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" class="form-control" name="cep" id="cep" >
+            </div>
+           
+            <div class="col-md-12">
+              <label for="image" class="form-label">Imagem</label>
+              <input type="file" class="form-control" name="image" id="image">
+            </div>
+            
+            <div class="col-md-12">
+                <label for="info" class="form-label">Viu algo no local nos conte :</label>
+                <textarea type="text" text class="form-control" name="description" id="description" ></textarea>
+            </div>
+
+            <div class="col-12">
+              <button class="btn btn-danger" type="submit">Enviar Denuncia</button>
+            </div>
+          </form>
+    </div>
+</div>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+        }, false)
+        })
+    })()
+</script>
+
+<%- include("layout/footer") %>
+
